@@ -4,8 +4,6 @@ namespace Maze
     {
         private void FixedUpdate()
         {
-            TimerSpeedGoodBonus();
-            TimerSpeedBadBonus();
             Move();
         }
 

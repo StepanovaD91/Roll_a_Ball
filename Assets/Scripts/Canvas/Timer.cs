@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 namespace Maze
@@ -8,6 +9,7 @@ namespace Maze
         public Text timerText;
         public int timeLeft = 60;
         private float gameTime;
+
         void Update()
         {
             timerText.text = timeLeft + " sec";

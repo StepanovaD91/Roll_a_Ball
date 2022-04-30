@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using static UnityEngine.Debug;
@@ -28,13 +29,22 @@ namespace Maze
 
         protected override void Interaction(GameObject interacted)
         {
-
-            if (interacted.gameObject.tag == "Player")
+            try
             {
-                Destroy(gameObject);
-                Application.LoadLevel(Application.loadedLevel);
-                Log("Проигрыш");
+                if (interacted.gameObject.CompareTag("Player"))
+                {
+                    CameraShake.ShakeDelegate.Invoke(0.25f);
+                    Destroy(gameObject);
+                    Application.LoadLevel(Application.loadedLevel);
+                    Log("Проигрыш");
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
         }
     }
 }

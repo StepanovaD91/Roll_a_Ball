@@ -1,62 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Maze
 {
     public class Player : MonoBehaviour
     {
-        public float _speed = 5.0f;
+        [SerializeField] private float _speed = 5.0f;
+        private float _goodBonusSpeed = 0f;
+        private float _badBonusSpeed = 0f;
 
-        [Header("Good Bonus")]
-        public float _speedGoodBonus = 15.0f;
-        public float _timerSpeedMaxGoodBonus = 200.0f;
-        public float _timerSpeedGoodBonus;
-        [Header("Bad Bonus")]
-        public float _speedBadBonus = 1.0f;
-        public float _timerSpeedMaxBadBonus = 100.0f;
-        public float _timerSpeedBadBonus;
-
-
-        private float _speedStart;
         private Rigidbody _rigidbody;
+        private float _baseSpeed = 5.0f;
+        private Coroutine _bonusRoutine;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _speedStart = _speed;
-        }
-        protected void TimerSpeedGoodBonus()
-        {
-            if (_timerSpeedGoodBonus > 0)
-            {
-                _speed = _speedGoodBonus;
-                _timerSpeedGoodBonus--;
-            }
-            else
-            {
-                _speed = _speedStart;
-            }
-        }
-        public void SpeedGoodBonus()
-        {
-            _timerSpeedGoodBonus = _timerSpeedMaxGoodBonus;
+            _speed = _baseSpeed + _goodBonusSpeed;
         }
 
-
-        protected void TimerSpeedBadBonus()
+        public void SpeedGoodBonus(float timer, float speedEffect)
         {
-            if (_timerSpeedBadBonus > 0)
+            _goodBonusSpeed = speedEffect;
+            ReCalculateSpeed();
+            if (_bonusRoutine != null)
             {
-                _speed = _speedBadBonus;
-                _timerSpeedBadBonus--;
+                StopCoroutine(_bonusRoutine);
             }
-            else
-            {
-                _speed = _speedStart;
-            }
+            _bonusRoutine = StartCoroutine(GoodBonusTimer(timer));
         }
-        public void SpeedBadBonus()
+        public void SpeedBadBonus(float timer, float speedEffect)
         {
-            _timerSpeedBadBonus = _timerSpeedMaxBadBonus;
+            _badBonusSpeed = speedEffect;
+            ReCalculateSpeed();
+            if (_bonusRoutine != null)
+            {
+                StopCoroutine(_bonusRoutine);
+            }
+            _bonusRoutine = StartCoroutine(BadBonusTimer(timer));
+        }
+        IEnumerator GoodBonusTimer(float timer)
+        {
+            yield return new WaitForSeconds(timer);
+            _goodBonusSpeed = 0;
+            ReCalculateSpeed();
+        }
+        IEnumerator BadBonusTimer(float timer)
+        {
+            yield return new WaitForSeconds(timer);
+            _badBonusSpeed = 0;
+            ReCalculateSpeed();
+        }
+
+        private void ReCalculateSpeed()
+        {
+            _speed = _baseSpeed + _goodBonusSpeed + _badBonusSpeed;
         }
 
         protected void Move()

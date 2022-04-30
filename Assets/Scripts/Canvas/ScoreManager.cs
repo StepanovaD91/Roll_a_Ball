@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 namespace Maze
@@ -8,24 +9,30 @@ namespace Maze
         [SerializeField] Text HighScoreText;
         [SerializeField] Text ScoreText;
 
-        public static float score;
-        int highscore;
+        [SerializeField] private float score;
+        private int _currentScore;
+        private int _maxScore;
+
+        public static Action<int> ScoreDelegate;
         void Start()
         {
-            score = 0;
+            ScoreDelegate += AddScore;
+            _currentScore = 0;
         }
 
-        void Update()
+        private void AddScore(int val)
         {
-            highscore = (int)score;
-            ScoreText.text = "SCORE: " + highscore.ToString();
+            _currentScore += val;
+            ScoreText.text = "SCORE: " + _currentScore.ToString();
 
-            if (PlayerPrefs.GetInt("score") <= highscore)
+            _maxScore = PlayerPrefs.GetInt("score");
+            if (_maxScore <= _currentScore)
             {
-                PlayerPrefs.SetInt("score", highscore);
+                PlayerPrefs.SetInt("score", _currentScore);
             }
 
             HighScoreText.text = "HIGH SCORE: " + PlayerPrefs.GetInt("score").ToString();
         }
+
     }
 }

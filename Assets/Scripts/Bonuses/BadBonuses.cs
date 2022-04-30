@@ -1,3 +1,5 @@
+using System.Collections;
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using static UnityEngine.Debug;
@@ -10,6 +12,8 @@ namespace Maze
         private float _lengthFly;
         private float _speedRotation;
 
+        [SerializeField] private float bonusEffect = -5.0f;
+        [SerializeField] private float timer = 10.0f;
 
         private void Awake()
         {
@@ -32,12 +36,24 @@ namespace Maze
 
         protected override void Interaction(GameObject interacted)
         {
-            interacted.GetComponent<Player>().SpeedBadBonus();
-
-            if (interacted.gameObject.tag == "Player")
+            try
             {
-                Log("Замедление передвижения");
+                if (interacted.gameObject.CompareTag("Player"))
+                {
+                    interacted.GetComponent<Player>().SpeedBadBonus(timer, bonusEffect);
+
+                    CameraShake.ShakeDelegate.Invoke(0.25f);
+
+                    Log("Замедление передвижения");
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+
         }
     }
 }

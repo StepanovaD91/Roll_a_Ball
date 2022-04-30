@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using static UnityEngine.Debug;
@@ -22,15 +23,21 @@ namespace Maze
 
         protected override void Interaction(GameObject interacted)
         {
-
-            if (interacted.gameObject.tag == "Player")
+            try
             {
-                Log("Предметы, которые обязательно нужно собрать для победы");
+                if (interacted.gameObject.CompareTag("Player"))
+                {
+                    Log("Предметы, которые обязательно нужно собрать для победы");
+                }
+                ScoreManager.ScoreDelegate.Invoke(1);
+
             }
-            ScoreManager.score++;
-
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
-
     }
 }
 
