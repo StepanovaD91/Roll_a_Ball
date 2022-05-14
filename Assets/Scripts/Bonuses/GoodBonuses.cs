@@ -10,6 +10,8 @@ namespace Maze
         private float _speedRotation;
         [SerializeField] private float bonusEffect = 5.0f;
         [SerializeField] private float timer = 20.0f;
+       // [SerializeField] private float timerStart = 20.0f;
+
 
         private void Awake()
         {
@@ -22,6 +24,8 @@ namespace Maze
             transform.Rotate(Vector3.up * (Time.deltaTime * _speedRotation), Space.World);
         }
 
+
+
         protected override void Interaction(GameObject interacted)
         {
             try
@@ -31,6 +35,7 @@ namespace Maze
                     interacted.GetComponent<Player>().SpeedGoodBonus(timer, bonusEffect);
 
                     CameraShake.ShakeDelegate.Invoke(0.1f);
+
 
                     Log("Ускорение передвижения");
                 }

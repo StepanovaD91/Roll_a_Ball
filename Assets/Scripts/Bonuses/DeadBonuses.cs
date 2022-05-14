@@ -11,6 +11,9 @@ namespace Maze
         private float _lengthFly;
         private float _speedRotation;
 
+        [SerializeField] private GameObject EndGameUI;
+        [SerializeField] private GameObject MenuUI;
+
 
         private void Awake()
         {
@@ -33,10 +36,11 @@ namespace Maze
             {
                 if (interacted.gameObject.CompareTag("Player"))
                 {
-                    CameraShake.ShakeDelegate.Invoke(0.25f);
+                    EndGameUI.gameObject.SetActive(true);
+                    MenuUI.gameObject.SetActive(false);
                     Destroy(gameObject);
-                    Application.LoadLevel(Application.loadedLevel);
                     Log("Проигрыш");
+
                 }
             }
             catch (Exception e)

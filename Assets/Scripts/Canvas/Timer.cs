@@ -10,6 +10,9 @@ namespace Maze
         public int timeLeft = 60;
         private float gameTime;
 
+        [SerializeField] private GameObject EndGameUI;
+        [SerializeField] private GameObject MenuUI;
+
         void Update()
         {
             timerText.text = timeLeft + " sec";
@@ -25,7 +28,8 @@ namespace Maze
             }
             if (timeLeft == 0)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                EndGameUI.gameObject.SetActive(true);
+                MenuUI.gameObject.SetActive(false);
             }
         }
     }

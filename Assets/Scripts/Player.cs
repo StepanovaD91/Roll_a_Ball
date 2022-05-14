@@ -15,6 +15,8 @@ namespace Maze
         private float _baseSpeed = 5.0f;
         private Coroutine _bonusRoutine;
 
+        private Action<float, float> OnTimerChanged;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -25,6 +27,9 @@ namespace Maze
         {
             _goodBonusSpeed = speedEffect;
             ReCalculateSpeed();
+
+            //  OnTimerChanged?.Invoke(timerStart, timer);
+
             if (_bonusRoutine != null)
             {
                 StopCoroutine(_bonusRoutine);
@@ -35,6 +40,9 @@ namespace Maze
         {
             _badBonusSpeed = speedEffect;
             ReCalculateSpeed();
+
+            //  OnTimerChanged?.Invoke(timerStart, timer);
+
             if (_bonusRoutine != null)
             {
                 StopCoroutine(_bonusRoutine);
@@ -59,6 +67,20 @@ namespace Maze
             _speed = _baseSpeed + _goodBonusSpeed + _badBonusSpeed;
         }
 
+        /* public virtual void OnBonusTimer()
+         {
+             OnTimerChanged?.Invoke(timerStart, timer);
+         }*/
+
+        public void AddTimerListener(Action<float, float> onTimerChanged)
+        {
+            OnTimerChanged += onTimerChanged;
+        }
+
+        public void RemoveTimerListener(Action<float, float> onTimerChanged)
+        {
+            OnTimerChanged -= onTimerChanged;
+        }
         protected void Move()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");

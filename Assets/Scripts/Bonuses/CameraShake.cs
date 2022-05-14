@@ -17,6 +17,7 @@ namespace Maze
         {
             StartCoroutine(Shake(duration, 0.15f));
         }
+
         IEnumerator Shake(float duration, float magnitude)
         {
             Vector3 originalPos = transform.localPosition;
@@ -35,6 +36,11 @@ namespace Maze
             }
 
             transform.localPosition = originalPos;
+        }
+
+        void OnDestroy()
+        {
+            ShakeDelegate += AddEvent;
         }
     }
 }

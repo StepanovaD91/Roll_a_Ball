@@ -13,12 +13,17 @@ namespace Maze
         private int _currentScore;
         private int _maxScore;
 
+        [SerializeField] private float scoreWin;
+        [SerializeField] private GameObject WinnerUI;
+        [SerializeField] private GameObject MenuUI;
         public static Action<int> ScoreDelegate;
         void Start()
         {
             ScoreDelegate += AddScore;
             _currentScore = 0;
         }
+
+
 
         private void AddScore(int val)
         {
@@ -32,6 +37,17 @@ namespace Maze
             }
 
             HighScoreText.text = "HIGH SCORE: " + PlayerPrefs.GetInt("score").ToString();
+
+            if (_currentScore >= scoreWin)
+            {
+                WinnerUI.gameObject.SetActive(true);
+                MenuUI.gameObject.SetActive(false);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            ScoreDelegate -= AddScore;
         }
 
     }
