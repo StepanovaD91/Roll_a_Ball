@@ -10,7 +10,6 @@ namespace Maze
         private float _speedRotation;
         [SerializeField] private float bonusEffect = 5.0f;
         [SerializeField] private float timer = 20.0f;
-       // [SerializeField] private float timerStart = 20.0f;
 
 
         private void Awake()

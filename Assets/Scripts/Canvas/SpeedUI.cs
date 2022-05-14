@@ -9,7 +9,12 @@ namespace Maze
     {
         [SerializeField] Text SpeedText;
 
-        public void Subscribe(Player player)
+        public void Awake()
+        {
+            Subscribe();
+        }
+
+        public void Subscribe()
         {
             Player.OnSpeedChanged += OnSpeedChanged;
         }

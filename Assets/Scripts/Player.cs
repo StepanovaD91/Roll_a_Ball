@@ -15,6 +15,8 @@ namespace Maze
         private float _baseSpeed = 5.0f;
         private Coroutine _bonusRoutine;
 
+        private float _timerStart;
+
         public static Action<float> OnSpeedChanged;
         private Action<float, float> OnTimerChanged;
 
@@ -22,14 +24,16 @@ namespace Maze
         {
             _rigidbody = GetComponent<Rigidbody>();
             _speed = _baseSpeed + _goodBonusSpeed;
+
+            OnSpeedChanged?.Invoke(_speed);
         }
 
         public void SpeedGoodBonus(float timer, float speedEffect)
         {
             _goodBonusSpeed = speedEffect;
             ReCalculateSpeed();
-
-            //  OnTimerChanged?.Invoke(timerStart, timer);
+            _timerStart = timer;
+            OnTimerChanged?.Invoke(_timerStart, timer);
 
             if (_bonusRoutine != null)
             {
@@ -41,25 +45,38 @@ namespace Maze
         {
             _badBonusSpeed = speedEffect;
             ReCalculateSpeed();
-
-            //  OnTimerChanged?.Invoke(timerStart, timer);
+            _timerStart = timer;
+            OnTimerChanged?.Invoke(_timerStart, timer);
 
             if (_bonusRoutine != null)
             {
                 StopCoroutine(_bonusRoutine);
             }
             _bonusRoutine = StartCoroutine(BadBonusTimer(timer));
+
         }
         IEnumerator GoodBonusTimer(float timer)
         {
-            yield return new WaitForSeconds(timer);
+            while (timer > 0)
+            {
+                yield return new WaitForSeconds(1);
+                timer -= 1;
+                OnTimerChanged(_timerStart, timer);
+            }
             _goodBonusSpeed = 0;
+            OnTimerChanged(_timerStart, 0);
             ReCalculateSpeed();
         }
         IEnumerator BadBonusTimer(float timer)
         {
-            yield return new WaitForSeconds(timer);
-            _badBonusSpeed = 0;
+            while (timer > 0)
+            {
+                yield return new WaitForSeconds(1);
+                timer -= 1;
+                OnTimerChanged(_timerStart, timer);
+            }
+            _goodBonusSpeed = 0;
+            OnTimerChanged(_timerStart, 0);
             ReCalculateSpeed();
         }
 
@@ -69,11 +86,6 @@ namespace Maze
 
             OnSpeedChanged?.Invoke(_speed);
         }
-
-        /* public virtual void OnBonusTimer()
-         {
-             OnTimerChanged?.Invoke(timerStart, timer);
-         }*/
 
         public void AddTimerListener(Action<float, float> onTimerChanged)
         {

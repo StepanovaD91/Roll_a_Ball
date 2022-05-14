@@ -12,7 +12,7 @@ namespace Maze
         [SerializeField] private float goodBonusToShowBar;
 
 
-        void Start()
+        public void Awake()
         {
             Subscribe();
         }
@@ -21,9 +21,9 @@ namespace Maze
         {
             player.AddTimerListener(OnTimerChanged);
         }
-        private void OnTimerChanged(float timer, float timerStart)
+        private void OnTimerChanged(float timer, float _timerStart)
         {
-            if (timer / timerStart < goodBonusToShowBar)
+            if (timer / _timerStart < goodBonusToShowBar)
             {
                 goodBonusTimer.gameObject.SetActive(true);
             }
@@ -31,6 +31,7 @@ namespace Maze
             {
                 goodBonusTimer.gameObject.SetActive(false);
             }
+
 
         }
     }
