@@ -7,7 +7,7 @@ namespace Maze
     {
         private InteractiveObject[] _interactiveObjects;
 
-        private void Awake()
+        private void Start()
         {
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
         }

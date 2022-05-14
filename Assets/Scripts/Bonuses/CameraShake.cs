@@ -40,7 +40,7 @@ namespace Maze
 
         void OnDestroy()
         {
-            ShakeDelegate += AddEvent;
+            ShakeDelegate -= AddEvent;
         }
     }
 }

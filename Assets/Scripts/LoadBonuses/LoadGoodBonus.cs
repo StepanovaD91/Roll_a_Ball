@@ -8,7 +8,7 @@ namespace Maze
     public class LoadGoodBonus : MonoBehaviour
     {
 
-        public void Start()
+        public void Awake()
         {
             var goodBonus = Resources.Load<GameObject>("Watermelon");
 

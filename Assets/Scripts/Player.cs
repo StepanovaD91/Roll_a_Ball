@@ -15,6 +15,7 @@ namespace Maze
         private float _baseSpeed = 5.0f;
         private Coroutine _bonusRoutine;
 
+        public static Action<float> OnSpeedChanged;
         private Action<float, float> OnTimerChanged;
 
         private void Start()
@@ -65,6 +66,8 @@ namespace Maze
         private void ReCalculateSpeed()
         {
             _speed = _baseSpeed + _goodBonusSpeed + _badBonusSpeed;
+
+            OnSpeedChanged?.Invoke(_speed);
         }
 
         /* public virtual void OnBonusTimer()
