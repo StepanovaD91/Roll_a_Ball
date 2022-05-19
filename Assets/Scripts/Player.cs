@@ -16,7 +16,6 @@ namespace Maze
         private Coroutine _bonusRoutine;
 
         private float _timerStart;
-
         public static Action<float> OnSpeedChanged;
         private Action<float, float> OnTimerChanged;
 
@@ -96,6 +95,9 @@ namespace Maze
         {
             OnTimerChanged -= onTimerChanged;
         }
+
+
+
         protected void Move()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");

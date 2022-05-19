@@ -1,15 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Maze
 {
     public sealed class GameController : MonoBehaviour, IDisposable
     {
+
         private InteractiveObject[] _interactiveObjects;
 
         private void Start()
         {
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
+
         }
 
         private void Update()

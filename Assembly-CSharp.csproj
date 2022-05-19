@@ -47,15 +47,19 @@
      <Compile Include="Assets\Scripts\Bonuses\GoodBonuses.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Bonuses\InteractiveObject.cs" />
+     <Compile Include="Assets\Scripts\Canvas\GameControllerUI.cs" />
      <Compile Include="Assets\Scripts\Canvas\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Canvas\SpeedUI.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IRotation.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
      <Compile Include="Assets\Scripts\Bonuses\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IFly.cs" />
+     <Compile Include="Assets\Scripts\Canvas\BonusBar\BadBonusBar.cs" />
      <Compile Include="Assets\Scripts\Bonuses\RequiredBonuses.cs" />
      <Compile Include="Assets\Scripts\Bonuses\BadBonuses.cs" />
-     <Compile Include="Assets\Scripts\Canvas\GameControllerUI.cs" />
+     <Compile Include="Assets\Scripts\LoadBonuses\LoadBadBonus.cs" />
+     <Compile Include="Assets\Scripts\LoadBonuses\LoadRequiredBonus.cs" />
+     <Compile Include="Assets\Scripts\LoadBonuses\LoadDeadBonus.cs" />
      <None Include="Assets\Font\technology-1\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

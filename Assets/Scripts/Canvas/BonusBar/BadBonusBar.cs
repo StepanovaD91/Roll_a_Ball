@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 namespace Maze
 {
-    public class GoodBonusBar : MonoBehaviour
+    public class BadBonusBar : MonoBehaviour
     {
         [SerializeField] private Player player;
-        [SerializeField] private Slider goodBonusTimer;
+        [SerializeField] private Slider badBonusTimer;
         private float _bonusToShowBar = 0;
-
-
         public void Awake()
         {
             Subscribe();
@@ -25,12 +23,12 @@ namespace Maze
         {
             if (timer / _timerStart > _bonusToShowBar)
             {
-                goodBonusTimer.value = timer / _timerStart;
-                goodBonusTimer.gameObject.SetActive(true);
+                badBonusTimer.value = timer / _timerStart;
+                badBonusTimer.gameObject.SetActive(true);
             }
             else
             {
-                goodBonusTimer.gameObject.SetActive(false);
+                badBonusTimer.gameObject.SetActive(false);
             }
         }
 

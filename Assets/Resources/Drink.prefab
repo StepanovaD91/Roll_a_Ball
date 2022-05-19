@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyImmediately: 1
-  _meshRenderer: {fileID: 0}
+  _meshRenderer: {fileID: 1292811820602535078}
+  bonusEffect: -5
+  timer: 10
 --- !u!65 &-8077671625218070931
 BoxCollider:
   m_ObjectHideFlags: 0
