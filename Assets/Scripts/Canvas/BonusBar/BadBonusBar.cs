@@ -17,13 +17,13 @@ namespace Maze
 
         public void Subscribe()
         {
-            player.AddTimerListener(OnTimerChanged);
+            player.AddBadTimerListener(OnBadTimerChanged);
         }
-        private void OnTimerChanged(float _timerStart, float timer)
+        private void OnBadTimerChanged(float _badTimerStart, float badTimer)
         {
-            if (timer / _timerStart > _bonusToShowBar)
+            if (badTimer / _badTimerStart > _bonusToShowBar)
             {
-                badBonusTimer.value = timer / _timerStart;
+                badBonusTimer.value = badTimer / _badTimerStart;
                 badBonusTimer.gameObject.SetActive(true);
             }
             else
@@ -34,7 +34,7 @@ namespace Maze
 
         public void OnDestroy()
         {
-            player.RemoveTimerListener(OnTimerChanged);
+            player.RemoveBadTimerListener(OnBadTimerChanged);
         }
     }
 }

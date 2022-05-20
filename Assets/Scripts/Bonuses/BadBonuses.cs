@@ -13,7 +13,7 @@ namespace Maze
         private float _speedRotation;
 
         [SerializeField] private float bonusEffect = -5.0f;
-        [SerializeField] private float timer = 10.0f;
+        [SerializeField] private float badTimer = 10.0f;
 
         private void Awake()
         {
@@ -40,7 +40,7 @@ namespace Maze
             {
                 if (interacted.gameObject.CompareTag("Player"))
                 {
-                    interacted.GetComponent<Player>().SpeedBadBonus(timer, bonusEffect);
+                    interacted.GetComponent<Player>().SpeedBadBonus(badTimer, bonusEffect);
 
                     CameraShake.ShakeDelegate.Invoke(0.25f);
 
@@ -52,7 +52,6 @@ namespace Maze
                 Console.WriteLine(e);
                 throw;
             }
-
 
         }
     }

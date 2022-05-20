@@ -3474,7 +3474,7 @@ MonoBehaviour:
   HighScoreText: {fileID: 600955996}
   ScoreText: {fileID: 1859794939}
   score: 0
-  scoreWin: 2
+  scoreWin: 10
   WinnerUI: {fileID: 1373736537}
   MenuUI: {fileID: 103202357}
 --- !u!114 &1052684595
