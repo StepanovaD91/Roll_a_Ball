@@ -66,6 +66,9 @@
      <Compile Include="Assets\Scripts\Canvas\BonusBar\BadBonusBar.cs" />
      <Compile Include="Assets\Scripts\Bonuses\RequiredBonuses.cs" />
      <Compile Include="Assets\Scripts\Bonuses\BadBonuses.cs" />
+     <Compile Include="Assets\Scripts\SaveData\IData.cs" />
+     <Compile Include="Assets\Scripts\SaveData\SavedData.cs" />
+     <Compile Include="Assets\Scripts\SaveData\SerializableXMLData.cs" />
      <None Include="Assets\Font\technology-1\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
