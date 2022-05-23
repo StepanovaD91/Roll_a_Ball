@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7995615104129737358}
   - component: {fileID: 221004119259093925}
   - component: {fileID: 2455237393479830733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon
   m_TagString: GoodBonus
   m_Icon: {fileID: 0}

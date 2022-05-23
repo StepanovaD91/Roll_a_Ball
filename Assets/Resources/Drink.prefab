@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1292811820602535078}
   - component: {fileID: 2675838461913121220}
   - component: {fileID: -8077671625218070931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drink
   m_TagString: BadBonus
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   DestroyImmediately: 1
   _meshRenderer: {fileID: 1292811820602535078}
   bonusEffect: -5
-  timer: 10
+  badTimer: 10
 --- !u!65 &-8077671625218070931
 BoxCollider:
   m_ObjectHideFlags: 0

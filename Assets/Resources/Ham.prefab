@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8447002388465678862}
   - component: {fileID: 5823127559647084775}
   - component: {fileID: -4883657926234659592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ham
   m_TagString: DeadBonus
   m_Icon: {fileID: 0}
@@ -131,3 +131,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyImmediately: 1
   _meshRenderer: {fileID: 0}
+  EndGameUI: {fileID: 0}
+  MenuUI: {fileID: 0}
