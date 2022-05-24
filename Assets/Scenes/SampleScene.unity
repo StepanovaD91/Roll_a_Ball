@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8279337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &256632155
 Transform:
   m_ObjectHideFlags: 0
@@ -1938,7 +1938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &576745886
 Transform:
   m_ObjectHideFlags: 0
@@ -2168,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &650661807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2819,9 +2819,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1889565910}
     m_Modifications:
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: Radar
+      value: 
+      objectReference: {fileID: 1588408209}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: MenuUI
       value: 
       objectReference: {fileID: 103202357}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: MiniMap
+      value: 
+      objectReference: {fileID: 943496014}
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: EndGameUI
       value: 
@@ -3150,9 +3158,9 @@ RectTransform:
   m_Father: {fileID: 1174364399}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -84, y: -153.3}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -84, y: 37.699997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &943496017
@@ -3632,6 +3640,8 @@ MonoBehaviour:
   scoreWin: 10
   WinnerUI: {fileID: 1373736537}
   MenuUI: {fileID: 103202357}
+  MiniMap: {fileID: 943496014}
+  Radar: {fileID: 1588408209}
 --- !u!114 &1052684595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3678,9 +3688,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1889565910}
     m_Modifications:
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: Radar
+      value: 
+      objectReference: {fileID: 1588408209}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: MenuUI
       value: 
       objectReference: {fileID: 103202357}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: MiniMap
+      value: 
+      objectReference: {fileID: 943496014}
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: EndGameUI
       value: 
@@ -3881,7 +3899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079214751
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,9 +5112,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1889565910}
     m_Modifications:
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: Radar
+      value: 
+      objectReference: {fileID: 1588408209}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: MenuUI
       value: 
       objectReference: {fileID: 103202357}
+    - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
+      propertyPath: MiniMap
+      value: 
+      objectReference: {fileID: 943496014}
     - target: {fileID: -4883657926234659592, guid: 6fb94a8d08d31014db8df82c2547ae97, type: 3}
       propertyPath: EndGameUI
       value: 
@@ -5852,9 +5878,9 @@ RectTransform:
   m_Father: {fileID: 1174364399}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -84, y: -250.6}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -84, y: -59.600006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1588408211
@@ -6485,6 +6511,8 @@ MonoBehaviour:
   timeLeft: 60
   EndGameUI: {fileID: 963486588}
   MenuUI: {fileID: 103202357}
+  MiniMap: {fileID: 943496014}
+  Radar: {fileID: 1588408209}
 --- !u!114 &1843915601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6822,7 +6850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1889565910
 Transform:
   m_ObjectHideFlags: 0
@@ -6924,7 +6952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1930275661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7068,7 +7096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2025996581
 MonoBehaviour:
   m_ObjectHideFlags: 0

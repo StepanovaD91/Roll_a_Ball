@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyImmediately: 1
-  _meshRenderer: {fileID: 0}
+  _meshRenderer: {fileID: 367622603060310025}
   EndGameUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  MiniMap: {fileID: 0}
+  Radar: {fileID: 0}

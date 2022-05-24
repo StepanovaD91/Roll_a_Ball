@@ -14,6 +14,27 @@ namespace Maze
     }
 
     [Serializable]
+    public sealed class SaveDataGoodBonus
+    {
+        public Vector3Serializable Position;
+        public float SpeedRotation;
+        public float BonusEffect;
+        public float Timer;
+    }
+
+
+    [Serializable]
+    public sealed class SaveDataBadBonus
+    {
+        public Vector3Serializable Position;
+        public float LengthFly;
+        public float SpeedRotation;
+        public float BonusEffect;
+        public float BadTimer;
+    }
+
+
+    [Serializable]
     public struct Vector3Serializable
     {
         public float X;

@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using static UnityEngine.Debug;
+using System.IO;
 
 namespace Maze
 {
@@ -15,10 +16,23 @@ namespace Maze
         [SerializeField] private float bonusEffect = -5.0f;
         [SerializeField] private float badTimer = 10.0f;
 
+        SerializableXMLData<SaveDataBadBonus> _serializableXMLData = new SerializableXMLData<SaveDataBadBonus>();
         private void Awake()
         {
             _speedRotation = Random.Range(2f, 50f);
 
+            /*SaveDataBadBonus saveData = new SaveDataBadBonus();
+            File.WriteAllText(path, Crypto.CryptoXOR(str));
+
+            saveData.Position = transform.position;
+            saveData.SpeedRotation = _speedRotation;
+            saveData.LengthFly = _lengthFly;
+            saveData.BonusEffect = bonusEffect;
+            saveData.BadTimer = badTimer;
+
+            var path = Path.Combine(Application.streamingAssetsPath, gameObject.name);
+
+            _serializableXMLData.Save(saveData, path);*/
         }
 
         public void Rotate()

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SaveDataBadBonus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Position>
+    <X>30.3653755</X>
+    <Y>0.398</Y>
+    <Z>32.31048</Z>
+  </Position>
+  <LengthFly>0</LengthFly>
+  <SpeedRotation>26.1570625</SpeedRotation>
+  <BonusEffect>-5</BonusEffect>
+  <BadTimer>10</BadTimer>
+</SaveDataBadBonus>

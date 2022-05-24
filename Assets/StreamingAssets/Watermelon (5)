@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SaveDataGoodBonus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Position>
+    <X>5.7</X>
+    <Y>0.533</Y>
+    <Z>35.96</Z>
+  </Position>
+  <SpeedRotation>25.47436</SpeedRotation>
+  <BonusEffect>5</BonusEffect>
+  <Timer>20</Timer>
+</SaveDataGoodBonus>

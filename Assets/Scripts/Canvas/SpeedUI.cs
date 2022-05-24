@@ -22,6 +22,18 @@ namespace Maze
         private void OnSpeedChanged(float speed)
         {
             SpeedText.text = speed.ToString();
+            if (speed < 5)
+            {
+                SpeedText.color = Color.red;
+            }
+            if (speed == 5)
+            {
+                SpeedText.color = Color.black;
+            }
+            if (speed > 5)
+            {
+                SpeedText.color = Color.green;
+            }
         }
 
         private void OnDestroy()

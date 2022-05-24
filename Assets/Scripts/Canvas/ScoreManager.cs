@@ -16,6 +16,8 @@ namespace Maze
         [SerializeField] private float scoreWin;
         [SerializeField] private GameObject WinnerUI;
         [SerializeField] private GameObject MenuUI;
+        [SerializeField] private GameObject MiniMap;
+        [SerializeField] private GameObject Radar;
         public static Action<int> ScoreDelegate;
         void Start()
         {
@@ -42,6 +44,8 @@ namespace Maze
             {
                 WinnerUI.gameObject.SetActive(true);
                 MenuUI.gameObject.SetActive(false);
+                MiniMap.gameObject.SetActive(false);
+                Radar.gameObject.SetActive(false);
             }
         }
 

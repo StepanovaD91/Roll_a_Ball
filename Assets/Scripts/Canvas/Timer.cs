@@ -12,6 +12,8 @@ namespace Maze
 
         [SerializeField] private GameObject EndGameUI;
         [SerializeField] private GameObject MenuUI;
+        [SerializeField] private GameObject MiniMap;
+        [SerializeField] private GameObject Radar;
 
         void Update()
         {
@@ -30,6 +32,8 @@ namespace Maze
             {
                 EndGameUI.gameObject.SetActive(true);
                 MenuUI.gameObject.SetActive(false);
+                MiniMap.gameObject.SetActive(false);
+                Radar.gameObject.SetActive(false);
             }
         }
     }
