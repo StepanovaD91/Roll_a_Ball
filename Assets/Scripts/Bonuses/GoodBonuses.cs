@@ -12,6 +12,8 @@ namespace Maze
         private float _speedRotation;
         [SerializeField] private float bonusEffect = 5.0f;
         [SerializeField] private float timer = 20.0f;
+        [SerializeField] private bool _isAllowScaling;
+
 
         SerializableXMLData<SaveDataGoodBonus> _serializableXMLData = new SerializableXMLData<SaveDataGoodBonus>();
         private void Awake()
@@ -28,6 +30,11 @@ namespace Maze
 
             _serializableXMLData.Save(saveData, path);
 
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawIcon(transform.position, "icon.png", _isAllowScaling);
         }
 
 

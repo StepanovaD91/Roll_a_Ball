@@ -7688,3 +7688,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145429678}
   m_CullTransparentMesh: 1
+--- !u!1001 &6990422910212110154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7181561
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0050001144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.8840237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8535535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1464466
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.35355338
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.35355338
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135854687023982660, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950311002016190339, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
+      propertyPath: m_Name
+      value: 'Cube(EditorTest) '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9161dcc4b8efd84995ec2f61acf0bf9, type: 3}
