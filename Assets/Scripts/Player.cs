@@ -19,10 +19,10 @@ namespace Maze
         private float _badTimerStart;
         public static Action<float> OnSpeedChanged;
 
-        private Action<float, float> _onGoodTimerChanged;
+        private Action<float, float> _onGoodTimerChanged;  
         private Action<float, float> _onBadTimerChanged;
 
-        private void Start()
+        private void Start() 
         {
             _rigidbody = GetComponent<Rigidbody>();
             _speed = _baseSpeed + _goodBonusSpeed;
@@ -109,6 +109,8 @@ namespace Maze
         {
             _onBadTimerChanged -= onBadTimerChanged;
         }
+
+        
 
         protected void Move()
         {

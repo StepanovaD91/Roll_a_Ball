@@ -20,7 +20,7 @@ namespace Maze
         {
             _speedRotation = Random.Range(10f, 40f);
 
-            SaveDataGoodBonus saveData = new SaveDataGoodBonus();
+            /*SaveDataGoodBonus saveData = new SaveDataGoodBonus();
             saveData.Position = transform.position;
             saveData.SpeedRotation = _speedRotation;
             saveData.BonusEffect = bonusEffect;
@@ -28,7 +28,7 @@ namespace Maze
 
             var path = Path.Combine(Application.streamingAssetsPath, gameObject.name);
 
-            _serializableXMLData.Save(saveData, path);
+            _serializableXMLData.Save(saveData, path);*/
 
         }
 
@@ -43,7 +43,10 @@ namespace Maze
             transform.Rotate(Vector3.up * (Time.deltaTime * _speedRotation), Space.World);
         }
 
-
+        public (float speedBonus, float timerBonus) GetBonus()
+        {
+            return (bonusEffect, timer);
+        }
 
         protected override void Interaction(GameObject interacted)
         {
@@ -55,7 +58,9 @@ namespace Maze
 
                     CameraShake.ShakeDelegate.Invoke(0.1f);
 
-
+                    (float speedBonus, float timerBonus) getBonus = (bonusEffect, timer);
+                    Log($"{getBonus.speedBonus}/{getBonus.timerBonus}");
+                    
                     Log("Ускорение передвижения");
                 }
             }

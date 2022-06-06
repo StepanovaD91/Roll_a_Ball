@@ -48,6 +48,11 @@ namespace Maze
             }
         }
 
+        public (float speedBonus, float timerBonus) GetBonus()
+        {
+            return (bonusEffect, badTimer);
+        }
+
         protected override void Interaction(GameObject interacted)
         {
             try
@@ -57,7 +62,10 @@ namespace Maze
                     interacted.GetComponent<Player>().SpeedBadBonus(badTimer, bonusEffect);
 
                     CameraShake.ShakeDelegate.Invoke(0.25f);
-
+                    
+                    (float speedBonus, float timerBonus) getBonus = (bonusEffect, badTimer);
+                    Log($"{getBonus.speedBonus}/{getBonus.timerBonus}");
+                    
                     Log("Замедление передвижения");
                 }
             }
